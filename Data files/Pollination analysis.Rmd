@@ -8,7 +8,9 @@ Done by *Kauthar Ismail*
 
 20 February 2025
 
-This scripture will use the various floral traits including flower colour and UV presence,corolla tube depth,nectar sugar content and number of flower per plot for each cultivar:to determine attractiveness to **bumblebees** and **honeybees**
+This scripture will use the various floral traits including flower colour and UV presence,corolla tube depth,nectar sugar content and number of flowers per plot for each cultivar:to determine attractiveness to **bumblebees** and **honeybees**
+We looked at 119 cultivars of 8 plant groups namely *Salvia  nemorosa*(SV), *Gaillardia  aristata*(GA), *Delosperma  cooperi*(DL),*Lavandula  angustifolia*(LF), *Lavandula   stoechas*(LV), *Sedum   telephium*(SE), *Perovskia   atriplicifolia*(PV) and *Agastache hybrida*(MP)
+
 This script was made using Rmarkdown-R notebook
 
 #I set up the R notebook by knitting to allow viewing in one place 
@@ -59,9 +61,10 @@ data_frame_new <- data_frame_new %>% mutate(Cultivar = paste(Variety, Colour, se
 data_frame_new$Cultivar<-as.factor(data_frame_new$Cultivar)
 ```
 
+
 <details>
   <summary>Summary of the data</summary>
- #Looking at the summary of the data to ensure factors and numerics 
+ #Looking at the summary of the data to ensure cultivar factor  
 ```{r}
 summary(data_frame_new)
 data_frame_new
@@ -71,7 +74,7 @@ data_frame_new
 
 <details>
   <summary>Creating a visual figure representation </summary>
-#Convert the data to long format and create a plot showing the                                      differences in nectar sugar content(NSC),corolla,flower,Bees and bumblebees                                  in the different cultivars 
+#Convert the data to long format and create a plot showing the                                      differences in nectar sugar content(NSC),corolla tube depth,flower number,honeybee and bumblebee number       in the first ten cultivars of *G.Aristata* (GA01-GA10)
 ```{r}
 data_frame_new %>% pivot_longer(cols=c("NSC","Corolla","Flower","Bee","Bumble"),
                               names_to="variable",values_to="value") %>% slice_head(n=50) %>%

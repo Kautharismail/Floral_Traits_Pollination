@@ -1628,9 +1628,14 @@ display: none;
 <p>20 February 2025</p>
 <p>This scripture will use the various floral traits including flower
 colour and UV presence,corolla tube depth,nectar sugar content and
-number of flower per plot for each cultivar:to determine attractiveness
-to <strong>bumblebees</strong> and <strong>honeybees</strong> This
-script was made using Rmarkdown-R notebook</p>
+number of flowers per plot for each cultivar:to determine attractiveness
+to <strong>bumblebees</strong> and <strong>honeybees</strong> We looked
+at 119 cultivars of 8 plant groups namely <em>Salvia nemorosa</em>(SV),
+<em>Gaillardia aristata</em>(GA), <em>Delosperma
+cooperi</em>(DL),<em>Lavandula angustifolia</em>(LF), <em>Lavandula
+stoechas</em>(LV), <em>Sedum telephium</em>(SE), <em>Perovskia
+atriplicifolia</em>(PV) and <em>Agastache hybrida</em>(MP)</p>
+<p>This script was made using Rmarkdown-R notebook</p>
 <p>#I set up the R notebook by knitting to allow viewing in one
 place</p>
 <p>#Load the required libraries</p>
@@ -1750,8 +1755,9 @@ Summary of the data
 Creating a visual figure representation
 </summary>
 <p>#Convert the data to long format and create a plot showing the
-differences in nectar sugar content(NSC),corolla,flower,Bees and
-bumblebees in the cultivars of <em>G.Aristata</em></p>
+differences in nectar sugar content(NSC),corolla tube depth,flower
+number,honeybee and bumblebee number in the first ten cultivars of
+<em>G.Aristata</em> (GA01-GA10)</p>
 <pre class="r"><code>data_frame_new %&gt;% pivot_longer(cols=c(&quot;NSC&quot;,&quot;Corolla&quot;,&quot;Flower&quot;,&quot;Bee&quot;,&quot;Bumble&quot;),
                               names_to=&quot;variable&quot;,values_to=&quot;value&quot;) %&gt;% slice_head(n=50) %&gt;%
   ggplot() +
