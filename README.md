@@ -9,4 +9,3 @@ This study found that cultivars of the same species differed in attractiveness t
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Kautharismail/Floral_Traits_Pollination/HEAD)
 
-
