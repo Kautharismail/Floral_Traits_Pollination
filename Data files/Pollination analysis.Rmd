@@ -21,8 +21,6 @@ library(tidyverse)
 #### Read in the raw data or csv's
 
 ```{r}
-getwd()
-setwd("~/GIT files/Floral_Traits_Pollination/Data files")
 DL<-read_csv("DL.csv")
 GA<-read.csv("GA.csv")
 LF<-read.csv("LF.csv")
